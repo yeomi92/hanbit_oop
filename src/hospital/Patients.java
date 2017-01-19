@@ -1,8 +1,8 @@
 package hospital;
 
 public class Patients {
-	String patName, patGen, patJumin, patAddr, patPhone, patEmail, patJob;
-	int docId, nurId, patId;
+	private String patName, patGen, patJumin, patAddr, patPhone, patEmail, patJob;
+	private int docId, nurId, patId;
 	public String getPatName() {
 		return patName;
 	}
