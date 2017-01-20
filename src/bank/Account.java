@@ -2,6 +2,8 @@ package bank;
 
 import java.util.Calendar;
 
+import util.randomGenerator;
+
 public class Account {
 	public final static String BANK_NAME="한빛뱅크";
 	private int money,accoutNo;
@@ -22,33 +24,18 @@ public class Account {
 		return createDate;
 	}
 	public Account(String uid,String accountType,int money){ //6자리 random숫자
-		/*this.accoutNo=createAccountNo();*/
-		this.accoutNo=(int)(Math.random()*(999999-100000+1)+100000);
-		this.createDate=today();
+		this.accoutNo=randomGenerator.getRandomNum(999999,100000);
+		this.createDate=Calendar.getInstance().get(Calendar.YEAR)+"년"+(Calendar.getInstance().get(Calendar.MONTH)+1)+"월"+Calendar.getInstance().get(Calendar.DAY_OF_MONTH)+"일";
 		this.uid=uid;
 		this.accountType=accountType;
 		this.money=money;
 	}
-	public String today(){
-		String today="";
-		Calendar now = Calendar.getInstance();
-		StringBuffer sb = new StringBuffer();
-		sb.append(now.get(now.YEAR));
-		sb.append("년");
-		sb.append(now.get(now.MONTH)+1);
-		sb.append("월");
-		sb.append(now.get(now.DAY_OF_MONTH));
-		sb.append("일");
-		today=sb.toString();
-		return today;
+	//입금
+	public void deposit(int money){
+		this.money+=money;
 	}
-	public int createAccountNo(){
-		String random="";
-		for(int i=0;i<6;i++){
-			random+=""+(int)(Math.random()*10);
-		}
-		return Integer.parseInt(random);
+	//출금
+	public void withdraw(int money){
+		this.money=(this.money>money)?this.money-money:this.money;
 	}
-	
-	
 }
