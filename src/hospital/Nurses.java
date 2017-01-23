@@ -1,34 +1,7 @@
 package hospital;
 
-import java.util.Calendar;
-
-public class Nurses {
-	private String nurName, nurGen, nurPhone, nurEmail, nurPosition, majorJob;
-	private int nurId;
-	public String getNurName() {
-		return nurName;
-	}
-	public void setNurName(String nurName) {
-		this.nurName = nurName;
-	}
-	public String getNurGen() {
-		return nurGen;
-	}
-	public void setNurGen(String nurGen) {
-		this.nurGen = nurGen;
-	}
-	public String getNurPhone() {
-		return nurPhone;
-	}
-	public void setNurPhone(String nurPhone) {
-		this.nurPhone = nurPhone;
-	}
-	public String getNurEmail() {
-		return nurEmail;
-	}
-	public void setNurEmail(String nurEmail) {
-		this.nurEmail = nurEmail;
-	}
+public class Nurses extends Member{
+	private String nurPosition, majorJob;
 	public String getNurPosition() {
 		return nurPosition;
 	}
@@ -41,12 +14,15 @@ public class Nurses {
 	public void setMajorJob(String majorJob) {
 		this.majorJob = majorJob;
 	}
-	public int getNurId() {
-		return nurId;
+	@Override
+	public String toString() {
+		return String.format("nurse ID: %s\n"
+					+ "major job: %s\n"
+					+ "name: %s\n"
+					+ "gender: %s\n"
+					+ "phone: %s\n"
+					+ "email: %s\n"
+					+ "position: %s\n",
+					uid,majorJob,name,getGender(ssn),phone,email,nurPosition);
 	}
-	public void setNurId(int nurId) {
-		this.nurId = nurId;
-	}
-	
-	
 }

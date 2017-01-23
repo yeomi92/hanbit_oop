@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import hospital.Bmi;
+
 public class Controller {
 	public void start(){
 		Scanner s = new Scanner(System.in);
@@ -33,7 +35,7 @@ public class Controller {
 					member.setName(input("이름"));
 					showMsg(member.getName()+"("+member.calcGender(ssn)+")"+"님 회원등록이 되었습니다.");
 					break;
-				case "2":
+				/*case "2":
 						Bmi patients= new Bmi(); //initialize
 						String uid="";
 						while(true){
@@ -48,7 +50,7 @@ public class Controller {
 						patients.setHeight((Double.parseDouble(input("키?")))/100);
 						patients.setWeight(Double.parseDouble(input("몸무게?")));
 						showMsg(member.getName()+"은 "+patients.calcBmi(patients.getWeight(),patients.getHeight())+"입니다.");
-					break;
+					break;*/
 				case "3":
 					//lotto
 					break;

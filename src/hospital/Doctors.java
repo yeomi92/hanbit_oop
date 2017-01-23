@@ -1,34 +1,7 @@
 package hospital;
 
-import java.util.Calendar;
-
-public class Doctors { //탄생목적이 db에 값을 가져가서 저장하는 것이다. 그러므로 schema와 같게 만들어야 한다.
-	private String docName, docGen, docPhone, docEmail, docPosition, majorTreat;
-	private int docId;
-	public String getDocName() {
-		return docName;
-	}
-	public void setDocName(String docName) {
-		this.docName = docName;
-	}
-	public String getDocGen() {
-		return docGen;
-	}
-	public void setDocGen(String docGen) {
-		this.docGen = docGen;
-	}
-	public String getDocPhone() {
-		return docPhone;
-	}
-	public void setDocPhone(String docPhone) {
-		this.docPhone = docPhone;
-	}
-	public String getDocEmail() {
-		return docEmail;
-	}
-	public void setDocEmail(String docEmail) {
-		this.docEmail = docEmail;
-	}
+public class Doctors extends Member{ //탄생목적이 db에 값을 가져가서 저장하는 것이다. 그러므로 schema와 같게 만들어야 한다.
+	private String docPosition, majorTreat;
 	public String getDocPosition() {
 		return docPosition;
 	}
@@ -41,11 +14,15 @@ public class Doctors { //탄생목적이 db에 값을 가져가서 저장하는 것이다. 그러므로
 	public void setMajorTreat(String majorTreat) {
 		this.majorTreat = majorTreat;
 	}
-	public int getDocId() {
-		return docId;
+	@Override
+	public String toString() {
+		return String.format("doctor ID: %s\n"
+					+ "major treatment: %s\n"
+					+ "name: %s\n"
+					+ "gender: %s\n"
+					+ "phone: %s\n"
+					+ "email: %s\n"
+					+ "position: %s\n",
+					uid,majorTreat,name,getGender(ssn),phone,email,docPosition);
 	}
-	public void setDocId(int docId) {
-		this.docId = docId;
-	}
-	
 }

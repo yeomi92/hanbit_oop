@@ -4,10 +4,11 @@ import java.util.Calendar;
 
 import util.randomGenerator;
 
-public class Account {
+public abstract class Account {
 	public final static String BANK_NAME="ÇÑºû¹ðÅ©";
-	private int money,accoutNo;
-	private String uid,accountType,createDate;
+	protected int money,accoutNo;
+	protected String uid,accountType,createDate;
+	public Account() {}
 	public int getMoney() {
 		return money;
 	}
@@ -30,12 +31,6 @@ public class Account {
 		this.accountType=accountType;
 		this.money=money;
 	}
-	//ÀÔ±Ý
-	public void deposit(int money){
-		this.money+=money;
-	}
-	//Ãâ±Ý
-	public void withdraw(int money){
-		this.money=(this.money>money)?this.money-money:this.money;
-	}
+	public abstract void deposit(int money);
+	public abstract void withdraw(int money);
 }
