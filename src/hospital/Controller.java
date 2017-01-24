@@ -23,12 +23,12 @@ public class Controller {
 		while(true){
 			switch(input(EXE_OPTION)){
 				case "0":
-					System.out.println("종료^^");
+					showMsg("종료^^");
 					return;
 				case "1":
-					doc = new Doctors(); //instance를 만든다.
+					doc = new Doctors();
 					String docInfo=input(DOC_SPEC);
-					String[] docInfoArr= docInfo.split(",");
+					String[] docInfoArr= docInfo.split(" ");
 					doc.setUid(Integer.parseInt(docInfoArr[0]));
 					doc.setMajorTreat(docInfoArr[1]);
 					doc.setName(docInfoArr[2]);
@@ -41,7 +41,7 @@ public class Controller {
 				case "2":
 					nur = new Nurses();
 					String nurInfo=input(NUR_SPEC);
-					String[] nurInfoArr=nurInfo.split(",");
+					String[] nurInfoArr=nurInfo.split(" ");
 					nur.setUid(Integer.parseInt(nurInfoArr[0]));
 					nur.setMajorJob(nurInfoArr[1]);
 					nur.setName(nurInfoArr[2]);
@@ -56,7 +56,7 @@ public class Controller {
 					int nurId=0;
 					Patients pat = new Patients();
 					String patInfo=input(PAT_SPEC);
-					String[] patInfoArr=patInfo.split(",");
+					String[] patInfoArr=patInfo.split(" ");
 					pat.setUid(Integer.parseInt(patInfoArr[0]));
 					nurId=Integer.parseInt(patInfoArr[1]);
 					docId=Integer.parseInt(patInfoArr[2]);
@@ -76,9 +76,9 @@ public class Controller {
 					showMsg(pat.toString());
 					break;
 				case "4":
-					Bmi bmi= new Treatment(); //initialize
+					Bmi bmi= new Bmi(); //initialize
 					String bmiInfo=input("키,몸무게");
-					String[] bmiInfoArr=bmiInfo.split(",");
+					String[] bmiInfoArr=bmiInfo.split(" ");
 					bmi.setHeight((Double.parseDouble(bmiInfoArr[0]))/100);
 					bmi.setWeight(Double.parseDouble(bmiInfoArr[1]));
 					showMsg(bmi.toString());

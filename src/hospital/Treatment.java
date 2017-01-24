@@ -1,26 +1,24 @@
 package hospital;
 
-public class Treatment extends Bmi{
-	@Override
-	public String calcBmi(double weight, double height) {
-		String result="";
-		double bmi=0;
-		bmi = weight / (height * height);
-		if (bmi > 30.0) {
-			result = "고도비만";
-		} else if (bmi > 25.0) {
-			result = "비만";
-		} else if (bmi > 23.0) {
-			result = "과체중";
-		} else if (bmi > 18.5) {
-			result = "정상";
-		} else {
-			result = "저체중";
-		}
-		return result;
+public abstract class Treatment { //instance variable은 반드시 initialize하지 않는다.
+	protected int treatId,docId,patId;
+	public int getTreatId() {
+		return treatId;
 	}
-	@Override
-	public String toString() {
-		return String.format("귀하는 %s 입니다.",calcBmi(weight,height));
+	public void setTreatId(int treatId) {
+		this.treatId = treatId;
 	}
+	public int getDocId() {
+		return docId;
+	}
+	public void setDocId(int docId) {
+		this.docId = docId;
+	}
+	public int getPatId() {
+		return patId;
+	}
+	public void setPatId(int patId) {
+		this.patId = patId;
+	}
+	public abstract String treat();
 }

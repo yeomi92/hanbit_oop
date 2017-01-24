@@ -1,11 +1,21 @@
 package hospital;
 
-public abstract class Bmi { //instance variable은 반드시 initialize하지 않는다.
-	protected double height, weight;
-	//setter를 생략하면, readOnly 파일, 외부에서 정보를 고칠 수 없다. 보안에 뛰어나다
-	//stand alone
-
-	/*public String calcBmi(double weight, double height){
+public class Bmi extends Treatment{
+	private double weight,height;
+	public double getWeight(){
+		return weight;
+	}
+	public void setWeight(double weight){
+		this.weight=weight;
+	}
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	@Override
+	public String treat(){
 		String result="";
 		double bmi=0;
 		bmi = weight / (height * height);
@@ -21,18 +31,9 @@ public abstract class Bmi { //instance variable은 반드시 initialize하지 않는다.
 			result = "저체중";
 		}
 		return result;
-	}*/
-	public void setHeight(double height){
-		this.height=height;
 	}
-	public void setWeight(double weight){
-		this.weight=weight;
+	@Override
+	public String toString() {
+		return String.format("귀하는 %s 입니다.",treat());
 	}
-	public double getHeight(){
-		return height;
-	}
-	public double getWeight(){
-		return weight;
-	}
-	public abstract String calcBmi(double weight, double height);
 }

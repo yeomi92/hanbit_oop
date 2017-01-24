@@ -1,4 +1,4 @@
-package bank;
+package bank2;
 
 import test.Member;
 import javax.swing.*;

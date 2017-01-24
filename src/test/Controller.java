@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import hospital.Bmi;
+import hospital.Treatment;
 
 public class Controller {
 	public void start(){

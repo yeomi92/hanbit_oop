@@ -1,8 +1,4 @@
-package bank;
-
-import java.util.Calendar;
-
-import util.randomGenerator;
+package bank2;
 
 public abstract class Account {
 	public final static String BANK_NAME="한빛뱅크";
@@ -13,13 +9,6 @@ public abstract class Account {
 	protected int money,accoutNo;
 	protected String uid,accountType,createDate;
 	public Account() {}
-	public Account(String uid,String accountType,int money){ //6자리 random숫자
-		accoutNo=randomGenerator.getRandomNum(999999,100000);
-		createDate=Calendar.getInstance().get(Calendar.YEAR)+"년"+(Calendar.getInstance().get(Calendar.MONTH)+1)+"월"+Calendar.getInstance().get(Calendar.DAY_OF_MONTH)+"일";
-		this.uid=uid;
-		this.accountType=accountType;
-		this.money=money;
-	}
 	public int getMoney() {
 		return money;
 	}
