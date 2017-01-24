@@ -18,6 +18,11 @@ public class WageAccount extends Account{
 	}
 	@Override
 	public void withdraw(int money) {
-		super.money=(super.money>money)?super.money-money:super.money;
+		super.money=(super.money>=money)?super.money-money:super.money;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "["+Account.BANK_NAME+"]\n계좌번호: "+accoutNo+"\n예금종류: 저축예금\n가입일: "+createDate+"\n잔액: "+money+"원";
 	}
 }

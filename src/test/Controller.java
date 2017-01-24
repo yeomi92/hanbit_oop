@@ -35,22 +35,6 @@ public class Controller {
 					member.setName(input("이름"));
 					showMsg(member.getName()+"("+member.calcGender(ssn)+")"+"님 회원등록이 되었습니다.");
 					break;
-				/*case "2":
-						Bmi patients= new Bmi(); //initialize
-						String uid="";
-						while(true){
-							uid=input("ID?");
-							if(member.getUid().equals(uid)){
-								break;
-							}else{
-								showMsg("ID를 다시입력하세요.");
-							}
-						}
-						patients.setUid(uid);
-						patients.setHeight((Double.parseDouble(input("키?")))/100);
-						patients.setWeight(Double.parseDouble(input("몸무게?")));
-						showMsg(member.getName()+"은 "+patients.calcBmi(patients.getWeight(),patients.getHeight())+"입니다.");
-					break;*/
 				case "3":
 					//lotto
 					break;

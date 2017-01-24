@@ -42,7 +42,7 @@ public class Controller {
 					String accountType=input("예금종류?");
 					int money=Integer.parseInt(input("입금금액?")); 
 					account= new WageAccount(uid,accountType,money);
-					showMsg("["+Account.BANK_NAME+"]\n계좌번호: "+account.getAccoutNo()+"\n예금종류: 저축예금\n"+member.getName()+"님\n가입일: "+account.getCreateDate()+"\n잔액: "+account.getMoney()+"원");
+					showMsg(account.toString());
 					break;
 				case "3":
 					account.deposit(Integer.parseInt(input("입금할 금액을 입력하세요.")));
