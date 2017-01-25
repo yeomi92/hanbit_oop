@@ -14,8 +14,6 @@ public class CustomerServiceImpl implements CustomerService{
 		String result="잔액부족\n잔액: "+c.getMoney();
 		if(money>p.getPrice()){
 			add(p);
-			c.getCart()[i]=p;
-			i++;
 			result=p.getName()+"를 카트에 추가\n잔액: "+c.getMoney();
 		}
 		return result;
@@ -26,6 +24,8 @@ public class CustomerServiceImpl implements CustomerService{
 		int money=c.getMoney();
 		money-=p.getPrice();
 		c.setMoney(money);
+		c.getCart()[i]=p;
+		i++;
 	}
 	//쇼핑을 마치고 영수증 출력 (toString과 잔액)
 	@Override
