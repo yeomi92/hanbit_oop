@@ -1,9 +1,9 @@
 package shopping;
 
 public class CustomerServiceImpl implements CustomerService{
-	Customer customer;
-	Product[] cart;
-	int i;
+	private Customer customer;
+	private Product[] cart;
+	private int i;
 	public CustomerServiceImpl() {
 		customer= new Customer();
 		cart = new Product[4];
